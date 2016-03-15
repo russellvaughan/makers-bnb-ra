@@ -1,2 +1,0 @@
-makersbnb = angular.module('makersbnb',[
-])
