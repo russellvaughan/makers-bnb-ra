@@ -27,6 +27,16 @@ describe('my app', function() {
         toMatch(/\d+/);
     });
 
+    it('should have a form', function(){
+      expect(element(by.id("spaces_form")).isPresent()).toBe(true);
+    });
+
+     it('should allow user to input space name', function(){
+      element(by.id("name")).sendKeys("Sam");
+      element(by.id("submit")).click("Submit");
+      expect(element(by.id("spaces_form")).isPresent()).toBe(true);
+    });
+ 
   });
 
 });
