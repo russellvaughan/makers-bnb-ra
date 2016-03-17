@@ -40,9 +40,9 @@ describe('makersbnb', function() {
     });
 
     it('should allow user to input space name', function(){
-      element(by.id("name")).sendKeys("Sam");
+      element(by.id("name")).sendKeys("Makers");
       element(by.id("submit")).click("Submit");
-      expect(element(by.id("spaces_form")).isPresent()).toBe(true)
+      expect(element(by.id("new_space")).getText()).toMatch(/Makers/)
     });
   });
 });

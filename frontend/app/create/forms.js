@@ -7,6 +7,9 @@ angular.module('makersbnb.createspace', ['ngRoute'])
   });
 }])
 
-.controller('CreateSpaceCtrl', [function() {
-
+.controller('CreateSpaceCtrl', ["$scope", function($scope) {
+  $scope.createSpace = function(field){
+    $scope.newSpace = field
+    return $scope.newSpace
+  };
 }]);

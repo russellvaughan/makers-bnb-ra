@@ -8,6 +8,7 @@ describe('CreateSpaceCtrl', function(){
     });
   });
   it('has a method called createSpace', function(){
-    expect(ctrl.createSpace()).toBeDefined();
+    expect(scope.createSpace(1)).toBeDefined();
+
   });
 });
