@@ -5,38 +5,28 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('should automatically redirect to spaces/index when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/spaces/index");
   });
 
 
-  describe('view1', function() {
+  describe('/spaces/index', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html');
     });
 
-
-    it('should render view1 when user navigates to /view1', function() {
+    it('should render space name when user navigates to the index', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+        toMatch(/lovely space/);
+    });
+
+    it('should render space id when user navigates to the index', function() {
+      expect(element.all(by.css('[ng-view] p')).first().getText()).
+        toMatch(/\d+/);
     });
 
   });
 
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
 });
