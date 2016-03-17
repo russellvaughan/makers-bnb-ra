@@ -20,6 +20,8 @@ require 'factory_girl_rails'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
+  # config.include FactoryGirl::Syntax::Methods
+
   # config.before(:all) do
   #   FactoryGirl.reload
   # end
