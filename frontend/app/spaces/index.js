@@ -9,6 +9,9 @@ angular.module('makersbnb.index', ['ngRoute'])
   });
 }])
 
-.controller('SpacesCtrl', [function() {
-
+.controller('SpacesCtrl', ["$scope", function($scope) {
+  this.getSpace = function(){
+    return [{id: 1, name: "lovely space"}, {id: 2, name: "horrid space"}]
+  };
+  $scope.spaces = this.getSpace()
 }]);
