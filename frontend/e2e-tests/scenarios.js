@@ -32,6 +32,7 @@ describe('makersbnb', function() {
 
     beforeEach(function() {
       browser.get('index.html');
+      element(by.id("create_space")).click("Create Space")
     });
 
     it('should have a form', function(){
