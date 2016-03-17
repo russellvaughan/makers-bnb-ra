@@ -2,7 +2,7 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('makersbnb', function() {
 
 
   it('should automatically redirect to spaces/index when location hash/fragment is empty', function() {
@@ -26,17 +26,22 @@ describe('my app', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/\d+/);
     });
+  });
+
+  describe('/spaces/index', function() {
+
+    beforeEach(function() {
+      browser.get('index.html');
+    });
 
     it('should have a form', function(){
       expect(element(by.id("spaces_form")).isPresent()).toBe(true);
     });
 
-     it('should allow user to input space name', function(){
+    it('should allow user to input space name', function(){
       element(by.id("name")).sendKeys("Sam");
       element(by.id("submit")).click("Submit");
-      expect(element(by.id("spaces_form")).isPresent()).toBe(true);
+      expect(element(by.id("spaces_form")).isPresent()).toBe(true)
     });
- 
   });
-
 });

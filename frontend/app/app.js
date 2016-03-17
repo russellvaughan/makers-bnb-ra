@@ -4,6 +4,7 @@
 angular.module('makersbnb', [
   'ngRoute',
   'makersbnb.index',
+  'makersbnb.createspace'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/spaces/index'});
