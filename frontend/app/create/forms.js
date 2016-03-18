@@ -14,22 +14,8 @@ angular.module('makersbnb.createspace', ['ngRoute'])
   param ).success(function(data, status){
     console.log(data);
   });
-    // $scope.newSpace = field
-    // return $scope.newSpace
+
   };
 }]);
 
-// restauranteur.controller 'RestaurantIndexCtrl', ['$scope', '$location', '$http', ($scope, $location, $http) ->
-// $scope.restaurants = []
-//   $http.get('./restaurants.json').success((data) ->
-//     $scope.restaurants = data
-//   )
-//   $scope.addRestaurant = (test) ->
-//     $http({
-//       url: '/restaurants#create',
-//       method: "POST",
-//       data: JSON.stringify({name:test}),
-//       headers: {'Content-Type': 'application/json'}
-//     })
-//
-// ]
+
