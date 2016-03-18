@@ -7,16 +7,12 @@ describe('SpacesCtrl', function(){
     inject(function($controller, $rootScope, _$httpBackend_){
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('http://localhost:3000/spaces.json').respond(data)
-      scope = $rootScope.$new(); 
+      scope = $rootScope.$new();
       ctrl = $controller('SpacesCtrl', {$scope:scope})
     });
   });
 
 
-  it('has a method called getSpace', function(){
-    expect(ctrl.getSpace()).toBeDefined();
-  });
-  
   it('has a attribute called $scope.spaces that returns an object from api', function(){
     $httpBackend.flush()
     expect(scope.spaces).toEqual(data)
