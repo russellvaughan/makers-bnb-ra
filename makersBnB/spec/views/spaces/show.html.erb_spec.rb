@@ -17,11 +17,12 @@ end
 RSpec.describe "/spaces", type: :request do
 describe 'POST /spaces.json' do
     before do
-      params = {:space => {:name => "London"}}
+      params = {:space => {:name => "London", :description => "cozy place"}}
       post "/spaces.json", params.to_json, {'ACCEPT' => "application/json", 'CONTENT_TYPE' => 'application/json'}
     end
     it 'post a place' do
       expect(Space.last.name).to eq("London")
+      expect(Space.last.description).to eq("cozy place")
     end
   end
 end
