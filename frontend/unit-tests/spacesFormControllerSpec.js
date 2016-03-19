@@ -15,7 +15,7 @@ describe('CreateSpaceCtrl', function(){
    it('sends a post to the backend', function(){
     scope.createSpace()
     $httpBackend.flush()
-    expect(location.path()).toBe('/index')
+    expect(location.path()).toBe('/spaces/index')
   })
 
 });

@@ -3,13 +3,13 @@ describe('SpacesDetailsCtrl', function(){
   var data = [{id: 1, name: "lovely space"}, {id: 2, name: "horrid space"}]
 
   beforeEach(function(){
-    module('makersbnb.index');
+    module('makersbnb.spacedetails');
     inject(function($controller, $rootScope, _$httpBackend_, $routeParams){
       $httpBackend = _$httpBackend_;
       routeParams = $routeParams
       $httpBackend.expectGET('http://localhost:3000/spaces.json').respond(data)
       scope = $rootScope.$new();
-      params = 1
+      params = {spaceId: "1"}
       ctrl = $controller('SpacesDetailsCtrl', {$scope:scope, $routeParams: params })
     });
   });

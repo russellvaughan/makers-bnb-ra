@@ -3,7 +3,7 @@ describe('SpacesCtrl', function(){
   var data = [{id: 1, name: "lovely space"}, {id: 2, name: "horrid space"}]
 
   beforeEach(function(){
-    module('makersbnb.index');
+    module('makersbnb.viewspaces');
     inject(function($controller, $rootScope, _$httpBackend_){
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('http://localhost:3000/spaces.json').respond(data)
