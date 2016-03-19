@@ -11,9 +11,7 @@ module.exports = function(config){
       'app/views/spaces/*.html',
       'app/views/*.html',
       'app/controllers/*.js',
-      'unit-tests/spacesControllerSpec.js',
-      'unit-tests/spacesFormControllerSpec.js',
-      'unit-tests/spacesDetailsCtrlSpec.js'
+      'unit-tests/*.js'
     ],
 
     autoWatch : true,

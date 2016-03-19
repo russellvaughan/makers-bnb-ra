@@ -54,9 +54,9 @@ describe('makersbnb', function() {
     it('updates space names', function(){
       element(by.id("Ronin")).click();
       element(by.id("Edit")).click();
-      element(by.id("name")).sendKeys("Ronout");
+      element(by.id("name")).sendKeys("Ronoutted");
       element(by.id("submit")).click("Submit");
-      expect(element(by.id("Ronout")).getText()).toMatch(/Ronout/)
+      expect(element(by.id("Ronoutted")).getText()).toMatch(/Ronoutted/)
     })
   });
 });
