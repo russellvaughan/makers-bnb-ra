@@ -8,11 +8,14 @@ angular.module('makersbnb.createspace', ['ngRoute'])
 }])
 
 .controller('CreateSpaceCtrl', ["$scope", "$http", "$location", function($scope, $http, $location) {
-  $scope.createSpace = function(field){
-    var param = JSON.stringify({name: field});
+  $scope.createSpace = function(field, description){
+    var param = {name: field, description: description};
+    console.log(param);
     $http.post("http://localhost:3000/spaces.json",
   param ).success(function(data, status){
     console.log(data);
+    $location.path('/spaces/index')
+    
   });
 
   };
