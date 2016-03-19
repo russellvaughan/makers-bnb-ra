@@ -27,7 +27,7 @@ angular.module('makersbnb.index', ['ngRoute'])
 }])
 
 .controller('SpacesDetailsCtrl', ["$scope","$http","$routeParams", function($scope, $http, $routeParams) {
-  $scope.whichItem = $routeParams.spaceId - 1;
+  $scope.whichItem = $routeParams - 1;
   this.getSpace = function(){
       $http.get('http://localhost:3000/spaces.json').then(function(response){
       	  $scope.spaces = response.data

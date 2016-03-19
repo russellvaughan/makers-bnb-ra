@@ -12,8 +12,7 @@ angular.module('makersbnb.createspace', ['ngRoute'])
     var param = JSON.stringify({name: field});
     $http.post("http://localhost:3000/spaces.json",
   param ).success(function(data, status){
-
-  });
   $location.path('/index');
+  });
   };
 }]);
