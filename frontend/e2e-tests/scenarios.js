@@ -45,6 +45,7 @@ describe('makersbnb', function() {
   describe('/spaces/index', function(){
 
     beforeEach(function() {
+      
       browser.get('index.html');
       element(by.id("create_space")).click();
       element(by.id("name")).sendKeys("Ronin");
@@ -54,9 +55,9 @@ describe('makersbnb', function() {
     it('updates space names', function(){
       element(by.id("Ronin")).click();
       element(by.id("Edit")).click();
-      element(by.id("name")).sendKeys("Ronoutted");
+      element(by.id("name")).sendKeys("Newtest");
       element(by.id("submit")).click("Submit");
-      expect(element(by.id("Ronoutted")).getText()).toMatch(/Ronoutted/)
+      expect(element(by.id("Newtest")).getText()).toMatch(/Newtest/)
     })
   });
 });
