@@ -36,7 +36,7 @@ rake routes
 rails s
 ```
 
-Launch the angular server
+Launch the Angular server
 --------------------------
 Go to http://localhost:3000 (or any other path the Api uses) in your browser, make sure the server is running.
 
@@ -51,7 +51,7 @@ rspec
 ```
 
 
-JavaScript/Angular - testing
+JavaScript/Angular - Testing
 -----------------------------
 
 Make sure the rails server is running for testing angular as they interact within the end to end tests(e2e)
