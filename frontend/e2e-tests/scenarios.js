@@ -77,10 +77,28 @@ describe('makersbnb', function() {
       element(by.id("Edit")).click();
       element(by.id("name")).sendKeys("Newtest");
       element(by.id("submit")).click("Submit");
+      browser.sleep(10000)
       expect(element(by.id("Newtest")).getText()).toMatch(/Newtest/)
     })
   });
 });
+
+ describe('/spaces/index', function(){
+
+    beforeEach(function() {
+      
+      browser.get('index.html');
+      element(by.id("create_space")).click();
+      element(by.id("name")).sendKeys("SpaceToDelete");
+      element(by.id("submit")).click("Submit");
+    });
+
+    it('updates space names', function(){
+      element(by.id("SpaceToDelete")).click();
+      element(by.id("Delete")).click();
+      expect(element(by.id("SpaceToDelete")).isPresent()).toBe(false);
+    })
+  });
 
 
 // describe('showing the user', function() {

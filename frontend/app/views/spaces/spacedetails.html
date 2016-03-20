@@ -1,3 +1,9 @@
-{{spaces[whichItem].name}}
-<a id="Edit"href="#/views/spaces/{{spaces[whichItem].id}}/editspace">Edit</a> 
+<p id={{spaces[whichItem].name}}>{{spaces[whichItem].name}}</p>
+<div ng-controller="EditSpaceCtrl"> <a id="Edit"href="#/views/spaces/{{spaces[whichItem].id}}/editspace">Edit</a> </div> 
 
+<div ng-controller="deleteSpaceCtrl">
+<form id="Delete" ng-click="deleteSpace()">
+<input type="submit" value="Delete" ></input>
+
+</form> 
+</div>
