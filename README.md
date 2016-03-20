@@ -1,47 +1,54 @@
-Makers BnB Rails and Angular
-============================
+##Makers BnB Rails and Angular
+==============================
 
-Description
+##Description
 
-It's BnB app built using Rails on the backend and AngularJS on the frontend.
+The challenge for this week was to build a replica AirBnB app using a Ruby on Rails backend and AngularJS frontend.
 
-Team Members
+##Team Members
 
-Eduardo M. Sanchez Delgado https://github.com/hedudelgado
-Russel Vaugham https://github.com/russellvaughan
-Matt Gough https://github.com/MattGough
-Mark Hill
+-Eduardo M. Sanchez Delgado https://github.com/hedudelgado
+-Russel; Vaugham https://github.com/russellvaughan
+-Matt Gough https://github.com/MattGough
+-Mark Hill https://github.com/markcmhill
+
+##Technology Used
 
 AngularJS
+- Protractor
+- Karma
+
 Ruby on Rails
-Installation Instructions
+- Rspec
 
-Clone the repo
 
-In one command line, makersBnB folder, run:
--------------------------------------------
+###Installation Instructions
 
+```
+git clone https://github.com/russellvaughan/makers-bnb-ra.git
+cd makersBnB
 bundle install
 rake db:create
 rake db:migrate
 npm install bower -g
 rake bower:install
-rake routes to see the different path of the Api
-rails s the launch it!
+rake routes 
+rails s
+```
 
-Then..
-------
-Go to http://localhost:3000 (or any other path the Api use) in your browser, make sure the server is running.
+Launch the angular server
+--------------------------
+Go to http://localhost:3000 (or any other path the Api uses) in your browser, make sure the server is running.
 
 Testing Instructions
 ----------------------
 
-RSpec (unit and feature tests gem)
+RSpec (unit and feature tests)
 
-run in command line (no need to have the server running)
+```
 rails g rspec:install
 rspec
-
+```
 
 
 JavaScript/Angular - testing
@@ -49,16 +56,15 @@ JavaScript/Angular - testing
 
 Make sure the rails server is running for testing angular as they interact within the end to end tests(e2e)
 
+Make sure you are in Frontend directory.
 for  JavaScript/Angular - e2e tests run:
 
-Make sure you are in Frontend directory.
-
+```
 npm install
 rails s (separate command line)
 npm run Protractor
+```
 
-
-
-For running and check the app make sure you have the Rails and Angular severs running in different command lines, then in your brower visit:
-For rails http://localhost:3000 
+To test drive the app, make sure you have the Rails and Angular severs running in different command line windows, then in your brower visit:
+For Rails http://localhost:3000 
 For Angularjs http://localhost:8000 
