@@ -7,6 +7,7 @@ angular.module('makersbnb', [
   'makersbnb.spacedetails',
   'makersbnb.createspace',
   'makersbnb.editspace',
+  'makersbnb.deletespace'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/views/spaces/index/'});
