@@ -1,5 +1,7 @@
 <div ng-repeat="space in spaces">
-  <a id="{{space.name}}" href="#/views/spaces/{{space.id}}"> {{space.name}}</a>
+  <a id="{{space.name}}" href="#/views/spaces/{{space.id}}">  
+  <p> {{space.id}} {{space.name}} {{space.description}}</p></a>
+
 </div>
 
 <a id='create_space'href='#/views/forms'>Create Space</a>

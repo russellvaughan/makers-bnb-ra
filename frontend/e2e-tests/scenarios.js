@@ -15,11 +15,15 @@ describe('makersbnb', function() {
 
     beforeEach(function() {
       browser.get('index.html');
+      element(by.id("create_space")).click();
+      element(by.id("name")).sendKeys("1 Makers");
+      element(by.id("submit")).click("Submit");
     });
 
     it('should render space name when user navigates to the index', function() {
-      expect(element.all(by.css('[ng-view] a')).first().getText()).
-        toMatch(/lovely space/);
+
+      expect(element.all(by.css('[ng-view] p')).getText()).
+        toMatch(/1 Makers/);
     });
 
   });
@@ -38,7 +42,23 @@ describe('makersbnb', function() {
     it('should allow user to input space name', function(){
       element(by.id("name")).sendKeys("Makers");
       element(by.id("submit")).click("Submit");
-      expect(element(by.id("Makers")).getText()).toMatch(/Makers/)
+      expect(element.all(by.css('[ng-view] p')).getText()).
+        toMatch(/Makers/)
+    });
+  });
+  describe('/spaces/index', function() {
+
+    beforeEach(function() {
+      browser.get('index.html');
+      element(by.id("create_space")).click("Create Space")
+    });
+
+    it('should allow user to input a description', function(){
+      element(by.id("name")).sendKeys("Makers");
+      element(by.id("description")).sendKeys("lovely!");
+      element(by.id("submit")).click("Submit");
+      expect(element.all(by.css('[ng-view] p')).getText()).
+        toMatch(/lovely!/)
     });
   });
 
