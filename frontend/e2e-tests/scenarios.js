@@ -82,6 +82,41 @@ describe('makersbnb', function() {
   });
 });
 
+ describe('/spaces/index', function(){
+
+    beforeEach(function() {
+      
+      browser.get('index.html');
+      element(by.id("create_space")).click();
+      element(by.id("name")).sendKeys("SpaceToDelete");
+      element(by.id("submit")).click("Submit");
+    });
+
+    it('updates space names', function(){
+      element(by.id("SpaceToDelete")).click();
+      element(by.id("Delete")).click();
+      expect(element(by.id("SpaceToDelete")).isPresent()).toBe(false);
+    })
+  });
+
+   describe('/spaces/index', function() {
+
+    beforeEach(function() {
+      browser.get('index.html');
+      element(by.id("create_space")).click("Create Space")
+    });
+
+    it('should allow user to input a price', function(){
+      element(by.id("name")).sendKeys("Makers");
+      element(by.id("description")).sendKeys("lovely!");
+      element(by.id("price")).sendKeys("250!");
+      element(by.id("submit")).click("Submit");
+      expect(element.all(by.css('[ng-view] p')).getText()).
+        toMatch(/250/)
+    });
+  });
+
+
 
 // describe('showing the user', function() {
 //            var query;

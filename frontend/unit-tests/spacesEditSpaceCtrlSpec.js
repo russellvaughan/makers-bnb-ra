@@ -5,11 +5,11 @@ describe('EditSpaceCtrl', function(){
     inject(function($controller, $rootScope, _$httpBackend_, $location, $routeParams){
       $httpBackend = _$httpBackend_;
       routeParams = $routeParams
-      param = {spaceId: "1", name: "upadated space"}
+      param = JSON.stringify({name: field})
       $httpBackend.expectPUT('http://localhost:3000/spaces/1.json', param).respond(200)
       location = $location
       scope = $rootScope.$new();
-      ctrl = $controller('EditSpaceCtrl', {$scope:scope,  $routeParams: param });
+      ctrl = $controller('EditSpaceCtrl', {$scope:scope,  $routeParams: {spaceId: "1"} });
       field = "string"
     });
   });
