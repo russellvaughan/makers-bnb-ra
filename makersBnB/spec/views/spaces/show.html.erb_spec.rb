@@ -43,3 +43,26 @@ RSpec.describe "spaces/edit", type: :request do
     end
 end
 
+
+RSpec.describe 'spaces/destroy', type: :request do
+  describe 'DELETE /spaces/1.json' do 
+    before do 
+      params = {:space => {:name => "London"}}
+      post "/spaces.json", params.to_json, {'ACCEPT' => "application/json", 'CONTENT_TYPE' => 'application/json'}
+    end
+      it 'deletes a space' do 
+        delete '/spaces/1.json'
+        expect(Space.count).to eq(0)
+    end
+  end
+end
+
+
+
+
+
+
+
+
+
+
