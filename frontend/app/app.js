@@ -3,9 +3,11 @@
 // Declare app level module which depends on views, and components
 angular.module('makersbnb', [
   'ngRoute',
-  'makersbnb.index',
-  'makersbnb.createspace'
+  'makersbnb.viewspaces',
+  'makersbnb.spacedetails',
+  'makersbnb.createspace',
+  'makersbnb.editspace',
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/spaces/index'});
+  $routeProvider.otherwise({redirectTo: '/views/spaces/index/'});
 }]);

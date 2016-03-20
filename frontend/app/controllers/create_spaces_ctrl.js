@@ -1,8 +1,8 @@
 angular.module('makersbnb.createspace', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/create/forms', {
-    templateUrl: 'create/forms.html',
+  $routeProvider.when('/views/forms', {
+    templateUrl: 'views/forms.html',
     controller: 'CreateSpaceCtrl'
   });
 }])
@@ -12,10 +12,7 @@ angular.module('makersbnb.createspace', ['ngRoute'])
     var param = JSON.stringify({name: field});
     $http.post("http://localhost:3000/spaces.json",
   param ).success(function(data, status){
-    console.log(data);
+  $location.path('/spaces/index');
   });
-
   };
 }]);
-
-

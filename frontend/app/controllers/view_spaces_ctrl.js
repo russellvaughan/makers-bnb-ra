@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('makersbnb.index', ['ngRoute'])
+angular.module('makersbnb.viewspaces', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/spaces/index', {
-    templateUrl: 'spaces/index.html',
+  $routeProvider.when('/views/spaces/index', {
+    templateUrl: 'views/spaces/index.html',
     controller: 'SpacesCtrl'
   });
 }])
@@ -15,9 +15,9 @@ angular.module('makersbnb.index', ['ngRoute'])
       	  $scope.spaces = response.data
       });
   };
-  
+
   $scope.spaces = this.getSpace()
 
   $scope.newSpace = {}
 
-}]);
+}])
