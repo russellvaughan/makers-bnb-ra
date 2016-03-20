@@ -15,17 +15,17 @@ describe('makersbnb', function() {
 
     beforeEach(function() {
       browser.get('index.html');
+      element(by.id("create_space")).click();
+      element(by.id("name")).sendKeys("1 Makers");
+      element(by.id("submit")).click("Submit");
     });
 
     it('should render space name when user navigates to the index', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
+
+      expect(element.all(by.css('[ng-view] p')).getText()).
         toMatch(/1 Makers/);
     });
 
-    it('should render space id when user navigates to the index', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/\d+/);
-    });
   });
 
   describe('/spaces/index', function() {
@@ -42,7 +42,7 @@ describe('makersbnb', function() {
     it('should allow user to input space name', function(){
       element(by.id("name")).sendKeys("Makers");
       element(by.id("submit")).click("Submit");
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
+      expect(element.all(by.css('[ng-view] p')).getText()).
         toMatch(/Makers/)
     });
   });
@@ -61,4 +61,46 @@ describe('makersbnb', function() {
         toMatch(/lovely!/)
     });
   });
+
+  describe('/spaces/index', function(){
+
+    beforeEach(function() {
+      
+      browser.get('index.html');
+      element(by.id("create_space")).click();
+      element(by.id("name")).sendKeys("Ronin");
+      element(by.id("submit")).click("Submit");
+    });
+
+    it('updates space names', function(){
+      element(by.id("Ronin")).click();
+      element(by.id("Edit")).click();
+      element(by.id("name")).sendKeys("Newtest");
+      element(by.id("submit")).click("Submit");
+      expect(element(by.id("Newtest")).getText()).toMatch(/Newtest/)
+    })
+  });
 });
+
+
+// describe('showing the user', function() {
+//            var query;
+//
+//            beforeEach(function() {
+//                query = element(by.model('query'));
+//                query.sendKeys('Adrian1707');
+//                element.all(by.css('a')).click();
+//            });
+//
+//            it("it should change the url", function() {
+//                browser.getLocationAbsUrl().then(function(url) {
+//                    expect(url).toBe('/users/Adrian1707');
+//                });
+//            });
+//
+//            it('should show the user profile', function() {
+//                expect(element(by.binding('userLogin')).getText()).toBe('Adrian1707')
+//            });
+//        });
+//    });
+// });

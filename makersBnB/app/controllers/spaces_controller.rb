@@ -20,7 +20,6 @@ class SpacesController < ApplicationController
 
   # GET /spaces/1/edit
   def edit
-    p json
   end
 
   # POST /spaces
@@ -44,6 +43,7 @@ class SpacesController < ApplicationController
   # PATCH/PUT /spaces/1
   # PATCH/PUT /spaces/1.json
   def update
+    p "update?"
     respond_to do |format|
       if @space.update(space_params)
         format.html { redirect_to @space, notice: 'Space was successfully updated.' }
