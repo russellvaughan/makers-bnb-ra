@@ -11,8 +11,6 @@ angular.module('makersbnb.editspace', ['ngRoute'])
   $scope.editSpace = function(field){
     routeParams = $routeParams
     var param = JSON.stringify({name: field});
-    console.log(routeParams)
-    console.log(param)
     $http.put("http://localhost:3000/spaces/"+ routeParams.spaceId +".json",
   param).success(function(data, status){
   $location.path('/spaces/index');
