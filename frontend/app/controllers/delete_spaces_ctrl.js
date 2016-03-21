@@ -11,8 +11,7 @@ angular.module('makersbnb.deletespace', ['ngRoute'])
   routeParams = $routeParams
   $scope.deleteSpace = function(){
     $http.delete("http://localhost:3000/spaces/"+ routeParams.spaceId +".json").success(function(data, status){
-  $location.path('/spaces/index');
-  });
+      $location.path('/spaces/index');
+    });
   };
-
 }]);

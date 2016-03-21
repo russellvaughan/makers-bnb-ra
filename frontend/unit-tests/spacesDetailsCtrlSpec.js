@@ -19,5 +19,4 @@ describe('SpacesDetailsCtrl', function(){
     expect(scope.spaces).toEqual(data)
     expect(scope.whichItem).toEqual(0)
   })
-
 });
