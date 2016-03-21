@@ -1,2 +1,2 @@
 In progress
-I would like to be able to add a description
+I would like to be able to add a price

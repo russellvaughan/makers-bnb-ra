@@ -77,7 +77,6 @@ describe('makersbnb', function() {
       element(by.id("Edit")).click();
       element(by.id("name")).sendKeys("Newtest");
       element(by.id("submit")).click("Submit");
-      browser.sleep(10000)
       expect(element(by.id("Newtest")).getText()).toMatch(/Newtest/)
     })
   });
@@ -99,6 +98,24 @@ describe('makersbnb', function() {
       expect(element(by.id("SpaceToDelete")).isPresent()).toBe(false);
     })
   });
+
+   describe('/spaces/index', function() {
+
+    beforeEach(function() {
+      browser.get('index.html');
+      element(by.id("create_space")).click("Create Space")
+    });
+
+    it('should allow user to input a price', function(){
+      element(by.id("name")).sendKeys("Makers");
+      element(by.id("description")).sendKeys("lovely!");
+      element(by.id("price")).sendKeys("250!");
+      element(by.id("submit")).click("Submit");
+      expect(element.all(by.css('[ng-view] p')).getText()).
+        toMatch(/250/)
+    });
+  });
+
 
 
 // describe('showing the user', function() {
