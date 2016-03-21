@@ -9,28 +9,13 @@ angular.module('makersbnb.viewspaces', ['ngRoute'])
   });
 }])
 
-.factory('ViewSpaceService', function($http) {
-   return {
-     getSpace: function() {
-       return $http.get('http://localhost:3000/spaces.json').then(function(result) {
-           return result.data;
-
-});
-}  
-}       
-})
-
 
 .controller('SpacesCtrl', ["$scope","$http","ViewSpaceService", function($scope, $http, ViewSpaceService) {
  
   ViewSpaceService.getSpace().then(function(data) {
        $scope.spaces = data;
-       console.log(data);
    });
   
-  console.log($scope.spaces)
-  $scope.newSpace = {}
-
 
 }]);
 
