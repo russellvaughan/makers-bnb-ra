@@ -8,13 +8,9 @@ angular.module('makersbnb.spacedetails', ['ngRoute'])
 }])
 
 
-.controller('SpacesDetailsCtrl', ["$scope","$http","$routeParams", function($scope, $http, $routeParams) {
+.controller('SpacesDetailsCtrl', ["$scope","$http","$routeParams","ViewSpaceService",function($scope, $http, $routeParams, ViewSpaceService) {
   $scope.whichItem = $routeParams.spaceId - 1;
-  this.getSpace = function(){
-      $http.get('http://localhost:3000/spaces.json').then(function(response){
-      	  $scope.spaces = response.data
-      });
-  };
-  $scope.spaces = this.getSpace()
-  $scope.newSpace = {}
+  ViewSpaceService.getSpace().then(function(data) {
+  $scope.spaces = data;
+   });
 }]);
