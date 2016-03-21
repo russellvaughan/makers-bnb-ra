@@ -1,6 +1,6 @@
 describe('CreateSpaceCtrl', function(){
   var ctrl, scope, data, params,location
- beforeEach(function(){
+  beforeEach(function(){
     module('makersbnb.createspace');
     inject(function($controller, $rootScope, _$httpBackend_, $location){
       $httpBackend = _$httpBackend_;
@@ -12,7 +12,7 @@ describe('CreateSpaceCtrl', function(){
     });
   });
 
-   it('sends a post to the backend', function(){
+  it('sends a post to the backend', function(){
     scope.createSpace()
     $httpBackend.flush()
     expect(location.path()).toBe('/spaces/index')

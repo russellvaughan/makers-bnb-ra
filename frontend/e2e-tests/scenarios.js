@@ -1,15 +1,9 @@
 'use strict';
-
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
-
 describe('makersbnb', function() {
-
-
   it('should automatically redirect to spaces/index when location hash/fragment is empty', function() {
     browser.get('index.html');
     expect(browser.getLocationAbsUrl()).toMatch("/spaces/index");
   });
-
 
   describe('/spaces/index', function() {
 
@@ -23,7 +17,7 @@ describe('makersbnb', function() {
     it('should render space name when user navigates to the index', function() {
 
       expect(element.all(by.css('[ng-view] p')).getText()).
-        toMatch(/1 Makers/);
+      toMatch(/1 Makers/);
     });
 
   });
@@ -43,9 +37,10 @@ describe('makersbnb', function() {
       element(by.id("name")).sendKeys("Makers");
       element(by.id("submit")).click("Submit");
       expect(element.all(by.css('[ng-view] p')).getText()).
-        toMatch(/Makers/)
+      toMatch(/Makers/)
     });
   });
+  
   describe('/spaces/index', function() {
 
     beforeEach(function() {
@@ -58,14 +53,14 @@ describe('makersbnb', function() {
       element(by.id("description")).sendKeys("lovely!");
       element(by.id("submit")).click("Submit");
       expect(element.all(by.css('[ng-view] p')).getText()).
-        toMatch(/lovely!/)
+      toMatch(/lovely!/)
     });
   });
 
   describe('/spaces/index', function(){
 
     beforeEach(function() {
-      
+
       browser.get('index.html');
       element(by.id("create_space")).click();
       element(by.id("name")).sendKeys("Ronin");
@@ -82,60 +77,40 @@ describe('makersbnb', function() {
   });
 });
 
- describe('/spaces/index', function(){
+describe('/spaces/index', function(){
 
-    beforeEach(function() {
-      
-      browser.get('index.html');
-      element(by.id("create_space")).click();
-      element(by.id("name")).sendKeys("SpaceToDelete");
-      element(by.id("submit")).click("Submit");
-    });
+  beforeEach(function() {
 
-    it('updates space names', function(){
-      element(by.id("SpaceToDelete")).click();
-      element(by.id("Delete")).click();
-      expect(element(by.id("SpaceToDelete")).isPresent()).toBe(false);
-    })
+    browser.get('index.html');
+    element(by.id("create_space")).click();
+    element(by.id("name")).sendKeys("SpaceToDelete");
+    element(by.id("submit")).click("Submit");
   });
 
-   describe('/spaces/index', function() {
+  it('updates space names', function(){
+    element(by.id("SpaceToDelete")).click();
+    element(by.id("Delete")).click();
+    expect(element(by.id("SpaceToDelete")).isPresent()).toBe(false);
+  })
+});
 
-    beforeEach(function() {
-      browser.get('index.html');
-      element(by.id("create_space")).click("Create Space")
-    });
+describe('/spaces/index', function() {
 
-    it('should allow user to input a price', function(){
-      element(by.id("name")).sendKeys("Makers");
-      element(by.id("description")).sendKeys("lovely!");
-      element(by.id("price")).sendKeys("250!");
-      element(by.id("submit")).click("Submit");
-      expect(element.all(by.css('[ng-view] p')).getText()).
-        toMatch(/250/)
-    });
+  beforeEach(function() {
+    browser.get('index.html');
+    element(by.id("create_space")).click("Create Space")
   });
 
+  it('should allow user to input a price', function(){
+    element(by.id("name")).sendKeys("Makers");
+    element(by.id("description")).sendKeys("lovely!");
+    element(by.id("price")).sendKeys("250!");
+    element(by.id("submit")).click("Submit");
+    expect(element.all(by.css('[ng-view] p')).getText()).
+    toMatch(/250/)
+  });
+});
 
 
-// describe('showing the user', function() {
-//            var query;
-//
-//            beforeEach(function() {
-//                query = element(by.model('query'));
-//                query.sendKeys('Adrian1707');
-//                element.all(by.css('a')).click();
-//            });
-//
-//            it("it should change the url", function() {
-//                browser.getLocationAbsUrl().then(function(url) {
-//                    expect(url).toBe('/users/Adrian1707');
-//                });
-//            });
-//
-//            it('should show the user profile', function() {
-//                expect(element(by.binding('userLogin')).getText()).toBe('Adrian1707')
-//            });
-//        });
-//    });
-// });
+
+

@@ -1,6 +1,6 @@
 describe('EditSpaceCtrl', function(){
   var ctrl, scope, data, param,location,field
- beforeEach(function(){
+  beforeEach(function(){
     module('makersbnb.editspace');
     inject(function($controller, $rootScope, _$httpBackend_, $location, $routeParams){
       $httpBackend = _$httpBackend_;
@@ -14,7 +14,7 @@ describe('EditSpaceCtrl', function(){
     });
   });
 
-   it('sends a patch to the backend', function(){
+  it('sends a patch to the backend', function(){
     scope.editSpace()
     $httpBackend.flush()
     expect(location.path()).toBe('/spaces/index')

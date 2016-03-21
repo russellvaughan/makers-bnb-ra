@@ -11,8 +11,8 @@ angular.module('makersbnb.createspace', ['ngRoute'])
   $scope.createSpace = function(field, description, price){
     var param = {name: field, description: description, price: price};
     $http.post("http://localhost:3000/spaces.json",
-  param ).success(function(data, status){
-  $location.path('/spaces/index');
-  });
-  };
-}]);
+      param ).success(function(data, status){
+        $location.path('/spaces/index');
+      });
+    };
+  }]);

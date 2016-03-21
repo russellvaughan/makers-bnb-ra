@@ -1,6 +1,6 @@
 describe('deleteSpaceCtrl', function(){
   var ctrl, scope, data, location
- beforeEach(function(){
+  beforeEach(function(){
     module('makersbnb.deletespace');
     inject(function($controller, $rootScope, _$httpBackend_, $location, $routeParams){
       $httpBackend = _$httpBackend_;
@@ -13,7 +13,7 @@ describe('deleteSpaceCtrl', function(){
     });
   });
 
-   it('sends a delete request to the backend', function(){
+  it('sends a delete request to the backend', function(){
     scope.deleteSpace()
     $httpBackend.flush()
     expect(location.path()).toBe('/spaces/index')
