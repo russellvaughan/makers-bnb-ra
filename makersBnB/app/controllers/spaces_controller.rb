@@ -5,7 +5,7 @@ class SpacesController < ApplicationController
   # GET /spaces.json
   def index
     @spaces = Space.all
-    p @spaces.last
+
   end
 
   # GET /spaces/1
@@ -30,7 +30,6 @@ class SpacesController < ApplicationController
 
     respond_to do |format|
       if @space.save
-         p @space
         format.html { redirect_to @space, notice: 'Space was successfully created.' }
         format.json { render :show, status: :created, location: @space }
       else
@@ -43,7 +42,6 @@ class SpacesController < ApplicationController
   # PATCH/PUT /spaces/1
   # PATCH/PUT /spaces/1.json
   def update
-    p "update?"
     respond_to do |format|
       if @space.update(space_params)
         format.html { redirect_to @space, notice: 'Space was successfully updated.' }
@@ -73,6 +71,6 @@ class SpacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_params
-      params.require(:space).permit(:name, :description)
+      params.require(:space).permit(:name, :description, :price)
     end
 end
