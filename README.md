@@ -26,19 +26,25 @@ Ruby on Rails
 
 ```
 git clone https://github.com/russellvaughan/makers-bnb-ra.git
+cd makers-bnb-ra
 cd makersBnB
 bundle install
 rake db:create
 rake db:migrate
-npm install bower -g
-rake bower:install
-rake routes 
 rails s
+```
+In a seperate terminal window
+
+```
+cd frontend
+sudo npm install bower -g
+bower:install
+npm start
 ```
 
 Launch the Angular server
 --------------------------
-Go to http://localhost:3000 (or any other path the Api uses) in your browser, make sure the server is running.
+Go to http://localhost:8000/app in your browser, make sure the server is running.
 
 Testing Instructions
 ----------------------
@@ -66,5 +72,5 @@ npm run Protractor
 ```
 
 To test drive the app, make sure you have the Rails and Angular severs running in different command line windows, then in your brower visit:
-For Rails http://localhost:3000 
-For Angularjs http://localhost:8000 
+For Rails http://localhost:3000
+For Angularjs http://localhost:8000/app
